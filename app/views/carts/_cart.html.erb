@@ -1,0 +1,20 @@
+<h2> Items in your cart</h2>
+
+<table>
+  <% total = 0 %>
+  <% @cart.lineitems.each do |x|%>
+    <tr>
+      <% costOfItem = x.quantity * x.product.price %>
+      <% total += x.quantity * x.product.price %>
+      <td><%= x.quantity %></td>
+      <td> <%= x.product.name %> </td>
+      <td class="item_price">  <%= number_to_currency(costOfItem) %></td>
+    </tr>
+
+  <% end %>
+  <tr class="total_line">
+    <td>Total</td>
+    <td class="total_cell"><%= number_to_currency(total) %></td>
+    </tr>
+</table>
+<%= button_to 'Empty Cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} %>

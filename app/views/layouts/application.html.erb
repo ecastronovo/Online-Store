@@ -16,13 +16,22 @@
 
     <div id="columns">
       <div id="side">
+
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/">Questions</a></li>
-          <li><a href="/">News</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><a href="/shopper/index.html">Home</a></li>
+          <li><a>Questions</a></li>
+          <li><a>News</a></li>
+          <li><a>Contact</a></li>
         </ul>
+        <div style=“color:yellow”>
+        <h1></h1>
+        </div>
+
+<div id=“cart">
+<%= render(@cart)%> </div>
+
       </div>
+
       <div id="main">
           <%= yield %>
       </div>
