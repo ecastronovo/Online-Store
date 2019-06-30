@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  include CurrentCart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
   # GET /carts
@@ -44,7 +45,6 @@ class CartsController < ApplicationController
     respond_to do |format|
       if @line_item.save
          format.html { redirect_to shopper_url }
-format.js
          format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
